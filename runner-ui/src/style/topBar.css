@@ -1,0 +1,24 @@
+.container-top {
+  background-color: #90c6af;
+  padding: 0.5rem;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  background-color: #90c6af;
+}
+
+.top-bar-imgs {
+  height: 2rem;
+  background: transparent;
+}
+
+.top-bar p {
+  font-size: 1rem;
+  font-family: cursive;
+  background: transparent;
+}
