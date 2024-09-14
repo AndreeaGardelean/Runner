@@ -1,4 +1,4 @@
-import '../style/startBar.css';
+import '../style/map.css';
 
 /**
  * The function creates and returns the 'Start' button to start an activity.
@@ -7,9 +7,9 @@ import '../style/startBar.css';
  */
 export default function StartBar() {
   return (
-    <div className="star-container" >
-      <div className="start-bar">      
-        <p>Start</p>
+    <div className="map-container" >
+      <div className="map">      
+        
       </div>
     </div>
   )
