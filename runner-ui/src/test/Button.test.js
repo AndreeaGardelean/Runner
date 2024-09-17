@@ -1,6 +1,6 @@
 import React from "react";
 import lock from '../icons/lock.svg';
-import { fireEvent, getByAltText, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 
 import Button from "../components/Button";
