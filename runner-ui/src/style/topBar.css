@@ -22,3 +22,10 @@
   font-family: cursive;
   background: transparent;
 }
+
+.user-icon {
+  position: absolute;
+  background: transparent;
+  width: 2rem;
+  right: 1rem;
+}

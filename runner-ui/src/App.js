@@ -4,6 +4,7 @@ import TopBar from './components/TopBar';
 import Home from './pages/Home';
 import Calendar from './pages/Calendar';
 import Races from './pages/Races';
+import LogIn from './pages/LogIn';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/races" element={<Races />} />
+          <Route path="/login" element={<LogIn />} />
         </Routes>
       </Router>
     </div>
