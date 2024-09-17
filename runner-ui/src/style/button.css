@@ -48,7 +48,7 @@ span {
 }
 
 .arrow,
-.user {
+.custom {
   transition: transform 0.8s cubic-bezier(0.88, 0.28, 0, 1.33);
 }
 
@@ -62,11 +62,11 @@ span {
   transform: translateY(0%);
 }
 
-.div-btn.active .user {
+.div-btn.active .custom {
   transform: translateY(-180%);
 }
 
-.user {
+.custom {
   transform: translateY(0%);
 }
 

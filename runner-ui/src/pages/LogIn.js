@@ -115,22 +115,22 @@ export default function LogIn() {
           
           <div className={`input-container name ${nameInputDone}`}>
             <Input inputType={"text"} inputId={"name"} inputPlaceholder={"Your Name"} handler={handleNameOnChange} />
-            <Button name={'name'} icon={user} className={'user'} active={nameArrowActive} clickHandler={handleNameClickHandler} />
+            <Button icon={user} active={nameArrowActive} clickHandler={handleNameClickHandler} />
           </div>
 
           <div className={`input-container email ${emailInputDone}`}>
             <Input inputType={"email"} inputId={"email"} inputPlaceholder={"Email address"} handler={handleEmailOnChange}/>
-            <Button name={'email'} icon={envelope} active={emailArrowActive} clickHandler={handleEmailClickHandler}/>
+            <Button icon={envelope} active={emailArrowActive} clickHandler={handleEmailClickHandler}/>
           </div>
 
           <div className={`input-container password ${passInputDone}`}>
             <Input inputType={"password"} inputId={"password"} inputPlaceholder={"Password"} handler={handlePasswordOnChange} />
-            <Button name={'password'} icon={lock} active={passArrowActive} clickHandler={handlePassClickHandler} />
+            <Button icon={lock} active={passArrowActive} clickHandler={handlePassClickHandler} />
           </div>
 
           <div className={`input-container repeat-password ${passRepeatInputDone}`}>
             <Input inputType={"password"} inputId={"repeat-password"} inputPlaceholder={"Repeat Password"} handler={handlePassRepeatOnChange} />
-            <Button name={'password'} icon={lock} active={passRepeatArrowActive} clickHandler={handlePassRepeatClickHandler} />
+            <Button icon={lock} active={passRepeatArrowActive} clickHandler={handlePassRepeatClickHandler} />
           </div>
 
         </form>
