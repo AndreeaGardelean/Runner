@@ -10,9 +10,9 @@ describe("<StartBar />", () => {
     render(<StartBar />);
 
     // Act
-    const iconImage = screen.getByText('Start');
+    const button = screen.getByText('Start');
 
     // Assert
-    expect(iconImage).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   })
 });
