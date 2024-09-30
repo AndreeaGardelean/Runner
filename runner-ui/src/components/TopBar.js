@@ -16,7 +16,7 @@ export default function TopBar() {
 
   function handleLogInClick() {
     setLogged(true);
-    navigate('/login');
+    navigate('/signin');
   };
 
   function handleLogOutCLick() {

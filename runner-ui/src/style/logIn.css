@@ -4,7 +4,6 @@
   background: transparent;
   border-radius: 2rem;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   left: 50%;
   transform: translateX(-50%);
@@ -43,7 +42,7 @@ h2 {
   align-items: center;
 }
 
-form .input-container {
+form .input-container{
   position: absolute;
   width: 100%;
   height: 5rem;
@@ -62,6 +61,10 @@ form .input-container {
 
 form .input-container:nth-child(1) {
   z-index: 4;
+}
+
+form .input-container:nth-child(1) .div-btn {
+  background-color: #90c6af;
 }
 
 form .input-container:nth-child(2) {
@@ -108,4 +111,27 @@ form .input-container.done {
 
 form .input-container.active .div-btn {
   background-color: #90c6af;
+}
+
+.signin-msg-container, .signup-msg-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(150%);
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+
+.signup-msg-container {
+  transform: translateY(200%);
+}
+
+a {
+  color: #3f6a57;
+}
+
+a, p {
+  font-size: 1.5rem;
 }

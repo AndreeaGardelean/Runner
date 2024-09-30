@@ -6,6 +6,7 @@ import user from '../icons/user.svg';
 import lock from '../icons/lock.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function LogIn() {
   const navigate = useNavigate();
@@ -132,7 +133,10 @@ export default function LogIn() {
             <Input inputType={"password"} inputPlaceholder={"Repeat Password"} handler={handlePassRepeatOnChange} />
             <Button icon={lock} active={passRepeatArrowActive} clickHandler={handlePassRepeatClickHandler} />
           </div>
-
+        <div className='signup-msg-container'>
+          <p>Already have an account?</p>
+          <Link to={'/signin'}>Sign In</Link>
+        </div>
         </form>
       </div>
     </div>

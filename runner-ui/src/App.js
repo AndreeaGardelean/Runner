@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Calendar from './pages/Calendar';
 import Races from './pages/Races';
 import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
@@ -18,7 +19,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/races" element={<Races />} />
-          <Route path="/login" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
         </Routes>
       </Router>
     </div>
