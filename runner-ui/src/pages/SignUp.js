@@ -23,11 +23,12 @@ export default function LogIn() {
   const [passRepeatArrowActive, setPassRepeatArrowActive] = useState('');
   const [passRepeatInputDone, setPassRepeatInputDone] = useState('');
 
+  const [errorMessage, setErrorMessage] = useState('');
+
   const [userData, setUserData] = useState({
     name: '',
     email: '',
-    password: '',
-    repeatPassword: ''
+    password: ''
   });
 
   function updateUserData(name, value) {
@@ -95,14 +96,32 @@ export default function LogIn() {
       setPassRepeatArrowActive('');
     } else if(value === userData['password']) {
       setPassRepeatArrowActive('active');
+    } else {
+      setPassRepeatArrowActive('');
     }
-    updateUserData('repeatPassword', event.target.value);
   };
 
   // executes when the arrow of the repeat password field is clicked
-  function handlePassRepeatClickHandler() {
-    console.log(userData)
-    navigate('/');
+  async function handlePassRepeatClickHandler() {
+    // send the data to the server
+    try {
+      const response = await fetch("http://localhost:8080/runner/user/signup", {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+      });
+      const reply = await response.json();
+      console.log('REPLY AFTER CREATION', reply, reply.message)
+      if (reply.status === 409) {
+        setErrorMessage(reply.message);
+      } else {
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('USER COULD NOT BE CREATED:', error)
+    }
   };
 
   return (
@@ -133,9 +152,10 @@ export default function LogIn() {
             <Input inputType={"password"} inputPlaceholder={"Repeat Password"} handler={handlePassRepeatOnChange} />
             <Button icon={lock} active={passRepeatArrowActive} clickHandler={handlePassRepeatClickHandler} />
           </div>
-        <div className='signup-msg-container'>
-          <p>Already have an account?</p>
-          <Link to={'/signin'}>Sign In</Link>
+          <div className='signup-msg-container'>
+            <p className='error-message'>{errorMessage}</p>
+            <p>Already have an account?</p>
+            <Link to={'/signin'}>Sign In</Link>
         </div>
         </form>
       </div>
