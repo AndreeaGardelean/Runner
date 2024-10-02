@@ -1,3 +1,4 @@
+import MapComponent from '../components/MapComponent.js';
 import StartBar from '../components/StartBar.js';
 
 /**
@@ -8,6 +9,7 @@ import StartBar from '../components/StartBar.js';
 export default function Home() {
   return (
     <div>
+      <MapComponent />
       <StartBar />
     </div>
   )
