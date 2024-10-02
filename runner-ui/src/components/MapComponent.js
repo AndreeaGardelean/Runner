@@ -3,6 +3,12 @@ import * as maptilersdk from '@maptiler/sdk';
 import '@maptiler/sdk/dist/maptiler-sdk.css';
 import '../style/map.css';
 
+/**
+ * MapComponent function creates and displays a map using MapTiler SDK library.
+ * The map is styled using an external CSS file and is wrapped in a container.
+ *
+ * @returns {JSX.Element} a map wrapped in an div element container.
+ */
 export default function MapComponent() {
   const mapContainer = useRef(null);
   const map = useRef(null);
