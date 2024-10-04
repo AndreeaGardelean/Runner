@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export default function LogIn() {
+export default function LogIn({setLogged}) {
   const navigate = useNavigate();
 
   const [emailArrowActive, setEmailArrowActive] = useState('');
@@ -15,6 +15,8 @@ export default function LogIn() {
 
   const [passArrowActive, setPassArrowActive] = useState('');
   const [passInputDone, setPassInputDone] = useState('');
+
+  const [errorMessage, setErrorMessage] = useState('');
 
   const [userData, setUserData] = useState({
     email: '',
@@ -57,8 +59,30 @@ export default function LogIn() {
   };
 
   // executes when the arrow of the password input field changes
-  function handlePassClickHandler() {
-    navigate('/');
+  async function handlePassClickHandler() {
+    try {
+      const response = await fetch('http://localhost:8080/runner/user/signin',
+        {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json'
+          },
+          body: JSON.stringify(userData)
+        });
+      
+      if (response.status !== 200) {
+        const reply = await response.json();
+        console.log(reply)
+        setErrorMessage(reply.message);
+      } else {
+        const userId = await response.json();
+        localStorage.setItem('userId', userId);
+        setLogged(true);
+        navigate('/');
+      }
+    } catch (e) {
+      console.error('ERROR WHEN SIGNNING IN');
+    }
   };
 
   return (
@@ -80,6 +104,7 @@ export default function LogIn() {
             <Button icon={lock} active={passArrowActive} clickHandler={handlePassClickHandler} />
           </div>
           <div className='signin-msg-container'>
+            <p className='error-message'>{errorMessage}</p>
             <p>New around here?</p>
             <Link to={'/signup'}>Create an account</Link>
           </div>

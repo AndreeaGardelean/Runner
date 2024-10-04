@@ -2,7 +2,6 @@ import run from '../icons/logo.png';
 import login from '../icons/login.svg';
 import logout from '../icons/logout.svg';
 import '../style/topBar.css';
-import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 /**
@@ -10,17 +9,17 @@ import { useNavigate } from "react-router-dom";
  * 
  * @returns <div> element containing the content of the top bar of the app
  */
-export default function TopBar() {
-  const [logged, setLogged] = useState(false);
+export default function TopBar({logged, setLogged}) {
   const navigate = useNavigate();
 
   function handleLogInClick() {
-    setLogged(true);
     navigate('/signin');
   };
 
   function handleLogOutCLick() {
     setLogged(false);
+    navigate('/signin');
+    localStorage.removeItem('userId');
   };
 
   return (

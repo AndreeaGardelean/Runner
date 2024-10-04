@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("runner/user")
-@CrossOrigin(origins = "http://localhost:3000")
 public class UserController {
   private final UserService userService;
 
@@ -49,6 +48,23 @@ public class UserController {
   @PostMapping("/signup")
   public Long createNewAccount(@Validated @RequestBody User user) {
     Long id = userService.createNewUser(user);
+    return id;
+  }
+
+  /**
+   * API endpoint for validating user credentials with data from database. Used
+   * when the user
+   * signs-in to the account.
+   * The user object must contain the fields email, password for account
+   * validation.
+   *
+   * @param user the user object from the View containing account information
+   * @return the uniquely generated ID of the user
+   */
+  @ResponseStatus(HttpStatus.OK)
+  @PostMapping("/signin")
+  public Long userSignIn(@Validated @RequestBody User user) {
+    Long id = userService.userSignIn(user);
     return id;
   }
 }

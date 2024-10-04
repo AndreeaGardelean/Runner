@@ -81,4 +81,13 @@ public class User {
   public String getPassword() {
     return this.password;
   }
+
+  /**
+   * Set the user's password.
+   *
+   * @param password the new password value.
+   */
+  public void setPassword(String password) {
+    this.password = password;
+  }
 }

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export default function LogIn() {
+export default function LogIn({setLogged}) {
   const navigate = useNavigate();
   
   const [nameArrowActive, setNameArrowActive] = useState('');
@@ -113,10 +113,11 @@ export default function LogIn() {
         body: JSON.stringify(userData)
       });
       const reply = await response.json();
-      console.log('REPLY AFTER CREATION', reply, reply.message)
       if (reply.status === 409) {
         setErrorMessage(reply.message);
       } else {
+        localStorage.setItem('userId', reply);
+        setLogged(true);
         navigate('/');
       }
     } catch (error) {
