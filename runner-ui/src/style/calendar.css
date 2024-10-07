@@ -24,12 +24,12 @@
   scrollbar-width: none;
 }
 
-.active {
+.activity {
   position: relative;
 }
 
-.active::before,
-.active::after {
+.activity::before,
+.activity::after {
   content: 'X';
   position: absolute;
   color: red;
