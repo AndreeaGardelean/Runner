@@ -5,9 +5,9 @@ import '../style/startBar.css';
  * 
  * @returns <div> element containing the elements that form the start activity button
  */
-export default function StartBar() {
+export default function StartBar({onClick}) {
   return (
-    <div className="star-container" >
+    <div className="star-container" onClick={onClick}>
       <div className="start-bar">      
         <p>Start</p>
       </div>
