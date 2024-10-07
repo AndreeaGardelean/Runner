@@ -4,7 +4,6 @@ import com.gardeleandreea.runner.model.User;
 import com.gardeleandreea.runner.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * accounts, retrieving user information, and managing user data. It acts as a
  * bridge between the client-side application and the user service layer,
  * handling HTTP requests and responses.
- * The controller is configured to allow cross-origin requests from the
- * specified origin.
  */
 @RestController
 @RequestMapping("runner/user")
