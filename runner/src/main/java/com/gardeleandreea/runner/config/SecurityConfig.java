@@ -30,7 +30,10 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.cors(Customizer.withDefaults()).authorizeHttpRequests(authorize -> authorize
-        .requestMatchers("/runner/user/signup", "/runner/user/signin").permitAll()
+        .requestMatchers("/runner/user/signup", "/runner/user/signin",
+            "/runner/activity/create",
+            "/runner/activity/get")
+        .permitAll()
         .anyRequest().authenticated())
         .formLogin(formLogin -> formLogin
             .loginPage("/login")
@@ -50,14 +53,15 @@ public class SecurityConfig {
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
-    configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Allow your client URL
+    configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
     configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept"));
-    configuration.setExposedHeaders(Arrays.asList("Authorization"));
+    // configuration.setExposedHeaders(Arrays.asList("Authorization"));
     configuration.setAllowCredentials(true);
 
     UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
     source.registerCorsConfiguration("/**", configuration);
     return source;
   }
+
 }
