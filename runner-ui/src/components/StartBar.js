@@ -1,16 +1,21 @@
 import '../style/startBar.css';
 
 /**
- * The function creates and returns the 'Start' button to start an activity.
+ * StartBar component renders a button that initiates an activity.
+ * It displays the provided text and triggers a click event when pressed.
  * 
- * @returns <div> element containing the elements that form the start activity button
+ * @param {Object} props - The props object.
+ * @param {function} props.onClick - The function to call when the button is clicked.
+ * @param {string} props.text - The text to display on the button.
+ * 
+ * @returns {JSX.Element} A <div> element containing the start activity button.
  */
-export default function StartBar({onClick}) {
+export default function StartBar({ onClick, text }) {
   return (
     <div className="star-container" onClick={onClick}>
       <div className="start-bar">      
-        <p>Start</p>
+        <p>{text}</p>
       </div>
     </div>
-  )
+  );
 }
