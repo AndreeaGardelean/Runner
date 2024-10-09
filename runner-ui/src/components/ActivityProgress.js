@@ -22,8 +22,8 @@ export default function ActivityProgress({ time, distance, pace, visible, title,
       </label>
       <div className='activity-data'>
         <div id="time" className="progress">{time}</div>
-        <div id="distance" className="progress">{distance}</div>
-        <div id="pace" className="progress">{pace}</div>
+        <div id="distance" className="progress">{distance} km</div>
+        <div id="pace" className="progress">{pace} m/s</div>
       </div>
     </div>
   )
