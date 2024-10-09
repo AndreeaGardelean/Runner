@@ -89,7 +89,7 @@ export default function LogIn({setLogged}) {
     <div className='form-container'>
       <div className='heading-wrapper'>
         <h2>Sign in</h2>
-        <p className='form-info'>Welcome back!</p>
+        <p className='form-info text'>Welcome back!</p>
       </div>
       <div className="login-form">
         <form className='form'>
@@ -104,8 +104,8 @@ export default function LogIn({setLogged}) {
             <Button icon={lock} active={passArrowActive} clickHandler={handlePassClickHandler} />
           </div>
           <div className='signin-msg-container'>
-            <p className='error-message'>{errorMessage}</p>
-            <p>New around here?</p>
+            <p className='error-message text'>{errorMessage}</p>
+            <p className='text'>New around here?</p>
             <Link to={'/signup'}>Create an account</Link>
           </div>
         </form>

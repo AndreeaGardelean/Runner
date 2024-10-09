@@ -129,7 +129,7 @@ export default function LogIn({setLogged}) {
     <div className='form-container'>
       <div className='heading-wrapper'>
         <h2>Sign up</h2>
-        <p className='form-info'>Fill in your information</p>
+        <p className='form-info text'>Fill in your information</p>
       </div>
       <div className="login-form">
         <form className='form'>
@@ -154,8 +154,8 @@ export default function LogIn({setLogged}) {
             <Button icon={lock} active={passRepeatArrowActive} clickHandler={handlePassRepeatClickHandler} />
           </div>
           <div className='signup-msg-container'>
-            <p className='error-message'>{errorMessage}</p>
-            <p>Already have an account?</p>
+            <p className='error-message text'>{errorMessage}</p>
+            <p className='text'>Already have an account?</p>
             <Link to={'/signin'}>Sign In</Link>
         </div>
         </form>
