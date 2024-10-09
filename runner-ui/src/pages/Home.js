@@ -141,7 +141,7 @@ export default function Home() {
 
   return (
     <div>
-      <MapComponent />
+      <MapComponent pace={setPace} />
       <ActivityProgress time={time} distance={distance} pace={pace} visible={visible} title={title} onChange={onTitleChange} />
       <StartBar text={text} onClick={startActivity} />
     </div>
